@@ -1,0 +1,20 @@
+.header {
+    color: navy;
+    background-color: ivory;
+}
+
+.ingredients{
+    text-align: center;
+    color:darkblue;
+    background-color: lightskyblue
+}
+
+.instructions {
+    text-align: center;
+    color:purple;
+    background-color: lightgoldenrodyellow
+}
+
+.recipe-information{
+    background-color: aliceblue;
+}

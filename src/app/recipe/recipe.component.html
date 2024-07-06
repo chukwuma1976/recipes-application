@@ -1,0 +1,41 @@
+<mat-card appearance="outlined">
+    <mat-card-header class="header" (click)="toggleRecipe()">
+        <h4>{{recipe?.name}}</h4></mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content *ngIf="displayRecipe">
+        <div>
+            <h5 class="ingredients" (click)="toggleIngredents()">Ingredients</h5>
+            <ul *ngIf="displayIngedients">
+                <li *ngFor="let ingredient of recipe?.ingredients">{{ingredient}}</li>
+            </ul>
+        </div>   
+        <mat-divider></mat-divider>
+        <div>
+            <h5 class="instructions" (click)="toggleInstructions()">Instructions</h5>
+            <ol *ngIf="displayInstructions">
+                <li *ngFor="let instruction of recipe?.instructions">{{instruction}}</li>
+            </ol>
+        </div> 
+        <mat-divider></mat-divider>
+        <section class="recipe-information">
+            <p>Prep Time: {{recipe?.prepTimeMinutes}}</p>
+            <p>Cook Time: {{recipe?.cookTimeMinutes}}</p>
+            <p>Servings: {{recipe?.servings}}</p>
+            <p>Difficulty of Preparation: {{recipe?.difficulty}}</p>
+            <p>Cuisine: {{recipe?.cuisine}}</p>
+            <p>Calories Per Serving: {{recipe?.caloriesPerServing}}</p> 
+            <p>Tags:</p> 
+            <ul>
+                <li *ngFor="let tag of recipe?.tags">{{tag}}</li>
+            </ul>
+            <p>Rating: {{recipe?.rating}}</p>
+            <mat-progress-bar mode="determinate" [value]="calculateRating(recipe?.rating)"></mat-progress-bar>
+            <br/>
+            <p>Number of Reviews: {{recipe?.reviewCount}}</p>
+            <p>Meal Type:</p> 
+            <ul>
+                <li *ngFor="let type of recipe?.mealType">{{type}}</li>
+            </ul>
+        </section>
+    </mat-card-content> 
+</mat-card>
