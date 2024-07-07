@@ -24,18 +24,18 @@ export class RecipesService {
   getTags(recipes: Recipe[]){
     const tagsArray = recipes.map(recipe => recipe.tags).flat()
     const setOfTags = new Set(tagsArray);
-    return Array.from(setOfTags); 
+    return Array.from(setOfTags).sort(); 
   }
 
   getCuisines(recipes: Recipe[]){
     const cuisineArray = recipes.map(recipe => recipe.cuisine);
     const setOfCuisines = new Set(cuisineArray);
-    return Array.from(setOfCuisines);
+    return Array.from(setOfCuisines).sort();
   }
 
   getMealType(recipes: Recipe[]){
     const mealTypeArray = recipes.map(recipe => recipe.mealType).flat();
     const setOfMealTypes = new Set(mealTypeArray);
-    return Array.from(setOfMealTypes);
+    return Array.from(setOfMealTypes).sort();
   }
 }

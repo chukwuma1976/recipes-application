@@ -1,5 +1,11 @@
 <div>
-    <h3>List of Recipes ({{recipes.length}})</h3> 
+    <h3>Number of Recipes: ({{recipes.length}})</h3>
+    <app-recipefilter 
+        (cuisineEvent)="filterCuisine($event)" 
+        (tagEvent)="filterTag($event)"
+        (typeEvent)="filterType($event)">
+    </app-recipefilter>
+    <br/>
     <div *ngFor="let item of recipes">
         <app-recipe [recipe]="item"></app-recipe>
     </div>

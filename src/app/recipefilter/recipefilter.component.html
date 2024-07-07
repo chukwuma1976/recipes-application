@@ -1,0 +1,23 @@
+<main class="filter">
+    <div>
+        <label>Cuisine</label><br/>
+        <select name="cuisine" (click)="changeCuisine($event)">
+            <option value="">All</option>
+            <option *ngFor="let cuisine of cuisines" [value]="cuisine">{{cuisine}}</option>
+        </select>
+    </div>
+    <div>
+        <label>Tag</label><br/>
+        <select mame="tag" (click)="changeTag($event)">
+            <option value="">All</option>
+            <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>
+        </select>
+    </div>
+    <div>
+        <label>Meal Type</label><br/>
+        <select name="type" (click)="changeType($event)">
+            <option value="">All</option>
+            <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+    </div>
+</main>
